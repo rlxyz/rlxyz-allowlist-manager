@@ -1,4 +1,5 @@
-import { AddressProcessor } from "./AddressProcessor";
+import { AddressProcessor } from "./address/AddressProcessor";
+import { Store } from "./Store";
 import { BasicSource, DiscordSource, TwitterSource } from "./Source";
 
 export enum SourceEnum {
@@ -10,9 +11,9 @@ export class SourceManager {
   sources: BasicSource[];
   addressProcessor: AddressProcessor;
 
-  constructor() {
+  constructor(db: Store) {
     this.sources = [];
-    this.addressProcessor = new AddressProcessor();
+    this.addressProcessor = new AddressProcessor(db);
   }
 
   StartProcess() {

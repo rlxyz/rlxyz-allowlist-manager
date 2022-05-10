@@ -5,7 +5,7 @@
 
 // 1. How do artist collaborate with a dev easily?
 // 2. How do we QC easily.
-import { AddressProcessor } from "./AddressProcessor";
+import { AddressProcessor } from "./address/AddressProcessor";
 import { SourceEnum, SourceManager } from "./SourceManager";
 
 export type SourceAddressArray = {
