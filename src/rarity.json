@@ -1,0 +1,392 @@
+{
+    "type": [
+        {
+            "name": "0. White Base",
+            "traits": [
+                {
+                    "name": "White Base-01.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "1. Type",
+            "traits": [
+                {
+                    "name": "Terminator.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Jade.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Water.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Silver.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Trippy.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Gold.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Noise.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Galaxy.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Blue.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Armoured.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Standard.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Fire.png",
+                    "weight": 1
+                },
+                {
+                    "name": "3rd Eye.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Radioactive.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Stone.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Tan.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Pink.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Purple.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Dark Grey.png",
+                    "weight": 1
+                },
+                {
+                    "name": "White.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "2. Pose",
+            "traits": [
+                {
+                    "name": "Alert.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Pounce.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Attentive.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Aware.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Calm.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Covert.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Fighting Stance.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Fury.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Growl.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Leap.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Lunging.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Lurking.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Mighty.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Majestic.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Parade.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Peaceful.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Primed.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Rage.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Relaxed.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Roar.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Sit.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Stealth.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Strike.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Strong.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Supreme.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Swift.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Swole.png",
+                    "weight": 1
+                },
+                {
+                    "name": "The Claw.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Vicious.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Yawn.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "3. Lucky Charms",
+            "traits": [
+                {
+                    "name": "Cards.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Dice.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Fire Crackers.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Koi Fish.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Lotus.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Mah Jong.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Mandarin Oranges.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Tea Pot.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "4. Emblems",
+            "traits": [
+                {
+                    "name": "Bonsai.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Foo Dog.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Lantern.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Money Cat.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Prosperity God.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Chinese Coin.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Lion Dance.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Peach.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Ying Yang.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "5. Frames",
+            "traits": [
+                {
+                    "name": "Bamboo.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Clouds.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Palm Tree.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Scrolls.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Swords.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Cherry Blossom.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Hibiscus.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Rings.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Swallows.png",
+                    "weight": 1
+                },
+                {
+                    "name": "Waves.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "6. Beers",
+            "traits": [
+                {
+                    "name": "1932.png",
+                    "weight": 1
+                },
+                {
+                    "name": "1953.png",
+                    "weight": 1
+                },
+                {
+                    "name": "1961.png",
+                    "weight": 1
+                },
+                {
+                    "name": "1970.png",
+                    "weight": 1
+                },
+                {
+                    "name": "1998.png",
+                    "weight": 1
+                },
+                {
+                    "name": "2005.png",
+                    "weight": 1
+                },
+                {
+                    "name": "2016.png",
+                    "weight": 1
+                },
+                {
+                    "name": "2022.png",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "name": "7. Texture",
+            "traits": [
+                {
+                    "name": "Texture-01.png",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}
