@@ -1,10 +1,14 @@
-import { AddressProcessor } from "./address/AddressProcessor";
+import { AddressProcessor } from "./processor/AddressProcessor";
 import { Store } from "./Store";
 import { BasicSource, DiscordSource, TwitterSource } from "./Source";
 
 export enum SourceEnum {
   DISCORD = 0,
   TWITTER = 1,
+}
+
+export enum ProcessorEnum {
+  ADDRESS_PROCESSOR = 0,
 }
 
 export class SourceManager {
@@ -23,7 +27,7 @@ export class SourceManager {
   }
 
   StartPostProcess() {
-    this.addressProcessor.db.getAll().forEach((address) => {});
+    this.addressProcessor.db.getAll().forEach((address: string) => {});
   }
 
   CreateSource(type: SourceEnum) {

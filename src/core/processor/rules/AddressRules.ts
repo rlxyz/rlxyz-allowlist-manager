@@ -1,17 +1,21 @@
 import ethers from "ethers";
-import { provider } from "../../utils/ethereum";
+import { provider } from "../../../utils/ethereum";
+import { Rule } from "../BasicProcessor";
+import { EthereumAccountType } from "../types";
 
 export enum AddressProcessorRuleEnum {
   ACCOUNT_IS_ADDRESS = 0,
   ACCOUNT_AGE_RULE = 1,
   ACCOUNT_BALANCE_RULE = 2,
 }
-export abstract class ValidAddressRule {
-  abstract Run(address: string): Promise<boolean>;
+
+export interface AccountRule extends Rule<EthereumAccountType> {
+  Run(args: EthereumAccountType): Promise<boolean>;
 }
+
 export const GetAddressProcessorRule = (
   type: AddressProcessorRuleEnum
-): ValidAddressRule => {
+): AccountRule => {
   switch (type) {
     case AddressProcessorRuleEnum.ACCOUNT_IS_ADDRESS: {
       return new AccountIsAddressRule();
@@ -26,19 +30,22 @@ export const GetAddressProcessorRule = (
       return new AccountIsAddressRule();
   }
 };
-export class AccountAgeRule extends ValidAddressRule {
-  async Run(address: string): Promise<boolean> {
+class AccountAgeRule implements AccountRule {
+  async Run(args: EthereumAccountType): Promise<boolean> {
+    const { address } = args;
     return true;
   }
 }
-export class AccountBalanceRule extends ValidAddressRule {
-  async Run(address: string): Promise<boolean> {
+class AccountBalanceRule implements AccountRule {
+  async Run(args: EthereumAccountType): Promise<boolean> {
+    const { address } = args;
     const balance = await provider.getBalance(address);
     return ethers.utils.formatEther(balance) > "0";
   }
 }
-export class AccountIsAddressRule extends ValidAddressRule {
-  async Run(address: string): Promise<boolean> {
+class AccountIsAddressRule implements AccountRule {
+  async Run(args: EthereumAccountType): Promise<boolean> {
+    const { address } = args;
     return ethers.utils.isAddress(address);
   }
 }

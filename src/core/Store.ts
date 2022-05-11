@@ -1,18 +1,22 @@
-type KVStoreMap = Map<string, number>;
+type KVStoreMap = Map<string, boolean>;
 
 export abstract class Store {
-  abstract set(key: string, value: number): void;
-  abstract getAll(): KVStoreMap;
+  abstract set(key: string, value: boolean): void;
+  abstract getAll(): string[];
 }
 
 export class KVStore extends Store {
-  data: KVStoreMap = new Map<string, number>();
+  data: KVStoreMap = new Map<string, boolean>();
 
-  set(key: string, value: number) {
+  set(key: string, value: boolean) {
     return this.data.set(key, value);
   }
 
-  getAll(): KVStoreMap {
-    return this.data;
+  getAll(): string[] {
+    const data: string[] = [];
+    for (const [address, _] of Object.entries(this.data)) {
+      data.push(address);
+    }
+    return data;
   }
 }
