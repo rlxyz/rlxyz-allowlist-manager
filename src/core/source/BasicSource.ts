@@ -5,7 +5,7 @@
 
 // 1. How do artist collaborate with a dev easily?
 // 2. How do we QC easily.
-import { AddressProcessor } from "./processor/AddressProcessor";
+import { AddressProcessor } from "../processor/AddressProcessor";
 
 export type SourceAddress = {
   address: string;
@@ -23,34 +23,4 @@ export abstract class BasicSource {
   }
 
   abstract Process(): void;
-}
-
-export class DiscordSource extends BasicSource {
-  Process() {
-    const data: SourceAddressArray = [
-      {
-        address: "0x",
-        args: {
-          mints: 1,
-        },
-      },
-    ];
-
-    this.addressProcessor.Run(data);
-  }
-}
-
-export class TwitterSource extends BasicSource {
-  Process() {
-    const data: SourceAddressArray = [
-      {
-        address: "0x",
-        args: {
-          mints: 1,
-        },
-      },
-    ];
-
-    this.addressProcessor.Run(data);
-  }
 }
