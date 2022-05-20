@@ -1,4 +1,4 @@
-import { Rule } from "../BasicProcessor";
+import { RuleInterface } from "../BasicRuleProcessor";
 import { TwitterAccountType } from "../types";
 
 export enum TwitterProcessorRuleEnum {
@@ -6,7 +6,7 @@ export enum TwitterProcessorRuleEnum {
   TWITTER_AGE_RULE = 1,
 }
 
-export interface TwitterRule extends Rule<TwitterAccountType> {
+export interface TwitterRule extends RuleInterface<TwitterAccountType> {
   Run(args: TwitterAccountType): Promise<boolean>;
 }
 

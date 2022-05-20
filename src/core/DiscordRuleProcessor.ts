@@ -1,14 +1,18 @@
-import { BasicProcessor, ProcessorRuleInterface, Rule } from "./BasicProcessor";
+import {
+  BasicRuleProcessor,
+  ProcessorRuleInterface,
+  RuleInterface,
+} from "./BasicRuleProcessor";
 import {
   DiscordProcessorRuleEnum,
   GetDiscordProcessorRule,
 } from "./rules/DiscordRules";
 import { DiscordAccountType } from "./types";
 
-type DiscordRule = Rule<DiscordAccountType>;
+type DiscordRule = RuleInterface<DiscordAccountType>;
 
-export class DiscordProcessor
-  extends BasicProcessor
+export class DiscordRuleProcessor
+  extends BasicRuleProcessor
   implements ProcessorRuleInterface<DiscordAccountType>
 {
   _getValidKey(arg: DiscordAccountType): string {

@@ -1,6 +1,6 @@
 import ethers from "ethers";
-import { provider } from "../../../utils/ethereum";
-import { Rule } from "../BasicProcessor";
+import { provider } from "../../utils/ethereum";
+import { RuleInterface } from "../BasicRuleProcessor";
 import { EthereumAccountType } from "../types";
 
 export enum AddressProcessorRuleEnum {
@@ -9,7 +9,7 @@ export enum AddressProcessorRuleEnum {
   ACCOUNT_BALANCE_RULE = 2,
 }
 
-export interface AccountRule extends Rule<EthereumAccountType> {
+export interface AccountRule extends RuleInterface<EthereumAccountType> {
   Run(args: EthereumAccountType): Promise<boolean>;
 }
 

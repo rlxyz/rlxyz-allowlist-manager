@@ -1,4 +1,4 @@
-import { Rule } from "../BasicProcessor";
+import { RuleInterface } from "../BasicRuleProcessor";
 import { DiscordAccountType } from "../types";
 
 export enum DiscordProcessorRuleEnum {
@@ -6,7 +6,7 @@ export enum DiscordProcessorRuleEnum {
   DISCORD_AGE_RULE = 1,
 }
 
-export interface DiscordRule extends Rule<DiscordAccountType> {
+export interface DiscordRule extends RuleInterface<DiscordAccountType> {
   Run(args: DiscordAccountType): Promise<boolean>;
 }
 

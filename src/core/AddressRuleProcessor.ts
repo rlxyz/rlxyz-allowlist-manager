@@ -1,14 +1,18 @@
-import { BasicProcessor, ProcessorRuleInterface, Rule } from "./BasicProcessor";
+import {
+  BasicRuleProcessor,
+  ProcessorRuleInterface,
+  RuleInterface,
+} from "./BasicRuleProcessor";
 import {
   AddressProcessorRuleEnum,
   GetAddressProcessorRule,
 } from "./rules/AddressRules";
 import { EthereumAccountType } from "./types";
 
-type AddressRule = Rule<EthereumAccountType>;
+type AddressRule = RuleInterface<EthereumAccountType>;
 
-export class AddressProcessor
-  extends BasicProcessor
+export class AddressRuleProcessor
+  extends BasicRuleProcessor
   implements ProcessorRuleInterface<EthereumAccountType>
 {
   _getValidKey(arg: EthereumAccountType): string {

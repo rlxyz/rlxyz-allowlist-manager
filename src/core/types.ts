@@ -9,3 +9,9 @@ export type DiscordAccountType = {
 export type TwitterAccountType = {
   username: string;
 };
+
+export enum BasicRuleTypes {
+  ADDRESS_RULE = 1,
+  DISCORD_RULE = 2,
+  TWITTER_RULE = 3,
+}

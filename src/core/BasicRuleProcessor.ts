@@ -1,4 +1,4 @@
-import { Store } from "../Store";
+import { Store } from "../utils/Store";
 
 export interface ProcessorRuleInterface<RuleGenericType> {
   AddRule(type: number): boolean;
@@ -6,13 +6,15 @@ export interface ProcessorRuleInterface<RuleGenericType> {
   ProcessRules(args: RuleGenericType): boolean;
 }
 
-export interface Rule<RuleGenericType> {
+export interface RuleInterface<RuleGenericType> {
   Run(args: RuleGenericType): Promise<boolean>;
 }
 
-type BasicRule = Rule<any>;
+type BasicRule = RuleInterface<any>;
 
-export abstract class BasicProcessor implements ProcessorRuleInterface<any> {
+export abstract class BasicRuleProcessor
+  implements ProcessorRuleInterface<any>
+{
   db: Store;
   rules: BasicRule[];
 

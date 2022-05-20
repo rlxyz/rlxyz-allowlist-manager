@@ -1,4 +1,8 @@
-import { BasicProcessor, ProcessorRuleInterface, Rule } from "./BasicProcessor";
+import {
+  BasicRuleProcessor,
+  ProcessorRuleInterface,
+  RuleInterface,
+} from "./BasicRuleProcessor";
 import {
   TwitterProcessorRuleEnum,
   GetTwitterProcessorRule,
@@ -6,10 +10,10 @@ import {
 
 import { TwitterAccountType } from "./types";
 
-type TwitterRule = Rule<TwitterAccountType>;
+type TwitterRule = RuleInterface<TwitterAccountType>;
 
-export class TwitterProcessor
-  extends BasicProcessor
+export class TwitterRuleProcessor
+  extends BasicRuleProcessor
   implements ProcessorRuleInterface<TwitterAccountType>
 {
   _getValidKey(arg: TwitterAccountType): string {
