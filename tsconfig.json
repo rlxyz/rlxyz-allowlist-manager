@@ -9,11 +9,7 @@
     "strict": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@core/*": ["core/*"]
-    }
+    "resolveJsonModule": true
   },
   "include": ["src/**/*", "index.ts"],
   "exclude": ["node_modules"]
