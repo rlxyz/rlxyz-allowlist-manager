@@ -1,3 +1,4 @@
+import { timeStamp } from "console";
 import { ethers } from "ethers";
 import { getContract, provider } from "../utils/ethereum";
 import { BasicMintProcessor, RuleInterface } from "./BasicMintProcessor";
@@ -11,10 +12,13 @@ export const allowlist: IAllowlist = {
 const collectionMaxMint = 1111;
 const collectionContractAddress = "0x123";
 const collectionMintPrice = 50000000000000000;
+const collectionPublicMintTime = new Date(+1);
+const collectionAllowlistMintTime = new Date(-1);
 
 type MintDetails = {
   address: string;
   amount: number;
+  timestamp: Date;
 };
 
 enum MintProcessorRuleEnum {
@@ -30,7 +34,7 @@ interface MintRule extends RuleInterface<MintDetails> {
   Run(args: MintDetails): Promise<boolean>;
 }
 
-export class BasicMintProcessorTest extends BasicMintProcessor {
+export class AllowlistMintProcessor extends BasicMintProcessor {
   _getProcessorRule(type: number): MintRule {
     switch (type) {
       case MintProcessorRuleEnum.ADDRESS_IS_VALID_ETH_ADDRESS: {
@@ -49,7 +53,7 @@ export class BasicMintProcessorTest extends BasicMintProcessor {
         return new CollectionHasMintsLeft();
       }
       case MintProcessorRuleEnum.COLLECTION_MINT_REMAINING_TIME_IS_VALID: {
-        return new AddressIsValidEthAddress();
+        return new CollectionMintTimeIsValid();
       }
       default:
         return new AddressIsValidEthAddress();
@@ -71,7 +75,7 @@ class AddressIsValidEthAddress implements MintRule {
 class AddressIsInAllowlist implements MintRule {
   async Run(args: MintDetails): Promise<boolean> {
     const { address } = args;
-    return address in allowlist ? true : false;
+    return address in allowlist && true;
   }
 }
 
@@ -79,15 +83,10 @@ class AddressHasMintsLeft implements MintRule {
   async Run(args: MintDetails): Promise<boolean> {
     const { address, amount } = args;
     const contract = getContract(String(collectionContractAddress));
-
-    const totalSupply = await contract.totalSupply();
     const userMintAmount = await contract.mintOf(address); // infer contract has mintOf function
-
-    if (totalSupply == collectionMaxMint) return false;
     if (userMintAmount == allowlist[address]) return false; // infer that user is in allowlist
     if (amount > allowlist[address]) return false;
     if (userMintAmount - amount <= 0) return false;
-
     return true;
   }
 }
@@ -96,9 +95,7 @@ class CollectionHasMintsLeft implements MintRule {
   async Run(args: MintDetails): Promise<boolean> {
     const contract = getContract(collectionContractAddress);
     const totalSupply = await contract.totalSupply();
-
     if (totalSupply == collectionMaxMint) return false;
-
     return true;
   }
 }
@@ -107,9 +104,15 @@ class AddressHasRequiredBalance implements MintRule {
   async Run(args: MintDetails): Promise<boolean> {
     const { address, amount } = args;
     const balance = await provider.getBalance(address);
-
     if (balance.toNumber() < amount * collectionMintPrice) return false; // todo: fix and test
+    return true;
+  }
+}
 
+class CollectionMintTimeIsValid implements MintRule {
+  async Run(args: MintDetails): Promise<boolean> {
+    const { timestamp } = args;
+    if (timestamp > collectionPublicMintTime) return false; // infer in public mint
     return true;
   }
 }
