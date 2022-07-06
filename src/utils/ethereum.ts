@@ -18,6 +18,8 @@ export const getContract = (contractAddress: string): ethers.Contract => {
   const contract = new ethers.Contract(
     contractAddress,
     [
+      "function balanceOf(address) public view returns (uint256)",
+      "function mintOf(address) public view returns (uint256)",
       {
         inputs: [],
         name: "totalSupply",
